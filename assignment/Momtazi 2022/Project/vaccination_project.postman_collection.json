@@ -1,0 +1,871 @@
+{
+	"info": {
+		"_postman_id": "0edf0af2-e46b-4a6c-9733-682d578f207c",
+		"name": "vaccination_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "login_nurse",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "3333333333",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "0000000D",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login_user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "7777777777",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "0000000H",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login_doctor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "1111111111",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "0000000B",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout?token=b209699437072b68ab4933b03d1436d6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "b209699437072b68ab4933b03d1436d6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "0000000001",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Keivan",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Ipchi Hagh",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "2001/04/01",
+									"type": "text"
+								},
+								{
+									"key": "sickness_history",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234ABCD",
+									"type": "text"
+								},
+								{
+									"key": "association_number",
+									"value": "12345",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "code",
+									"value": "12345678",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "paramedic",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "nurse_or_doctor",
+									"value": "doctor",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register_nurse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "0123456789",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "nurse",
+									"type": "default"
+								},
+								{
+									"key": "code",
+									"value": "12345678",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register_nurse",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register_nurse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register_doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "0123456789",
+									"type": "text"
+								},
+								{
+									"key": "association_number",
+									"value": "12345",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register_doctor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register_doctor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "doctors",
+					"item": [
+						{
+							"name": "add_new_brand",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Session-Token",
+										"value": "e15cd6e5302b301943c464c6940a4a78",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "pfizer",
+											"type": "text"
+										},
+										{
+											"key": "institude",
+											"value": "pfizer",
+											"type": "text"
+										},
+										{
+											"key": "nationality",
+											"value": "american",
+											"type": "text"
+										},
+										{
+											"key": "period",
+											"value": "60",
+											"type": "text"
+										},
+										{
+											"key": "institude_type",
+											"value": "private",
+											"type": "text"
+										},
+										{
+											"key": "dose_count",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/add_new_brand",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"add_new_brand"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add_new_vaccination_center",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Session-Token",
+										"value": "e15cd6e5302b301943c464c6940a4a78",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "pfizer",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "USA, California, Walking Street",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/add_new_vaccination_center",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"add_new_vaccination_center"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_account",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Session-Token",
+										"value": "e15cd6e5302b301943c464c6940a4a78",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/delete_account?username=0000000001",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"delete_account"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "0000000001"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "nurses",
+					"item": [
+						{
+							"name": "add_new_vial",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Session-Token",
+										"value": "4ca8d9283e6322ffb8abbeb3b9723c19",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "serial_number",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "dose_counts",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "created_on",
+											"value": "2001/03//12",
+											"type": "text"
+										},
+										{
+											"key": "brand_name",
+											"value": "pfizer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/add_new_vial",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"add_new_vial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "make_injection",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Session-Token",
+										"value": "c854a1ed2ea8b65621189dd4893ca6a7",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "administrated_to",
+											"value": "7777777777",
+											"type": "text"
+										},
+										{
+											"key": "time_stamp",
+											"value": "2001/03//13",
+											"type": "text"
+										},
+										{
+											"key": "vaccination_center_name",
+											"value": "0x03",
+											"type": "text"
+										},
+										{
+											"key": "serial_number",
+											"value": "11113",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/make_injection",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"make_injection"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "view_profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Session-Token",
+								"value": "c7efebd0c74685c5300f0544250bfc56",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/view_profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"view_profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view_vaccination_center_scores",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Session-Token",
+								"value": "92a12a0732116a985507f2e48264016d",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/view_vaccination_center_scores?page=0",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"view_vaccination_center_scores"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view_administrations_per_day",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Session-Token",
+								"value": "92a12a0732116a985507f2e48264016d",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/view_administrations_per_day",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"view_administrations_per_day"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "administrations_per_brand",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Session-Token",
+								"value": "92a12a0732116a985507f2e48264016d4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/administrations_per_brand",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"administrations_per_brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brands_centers_by_rate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Session-Token",
+								"value": "98fc1a3dad2d4203860935074eb6cb0d",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/brands_centers_by_rate",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"brands_centers_by_rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brands_centers_by_rate_personalized",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Session-Token",
+								"value": "98fc1a3dad2d4203860935074eb6cb0d",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/brands_centers_by_rate_personalized",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"brands_centers_by_rate_personalized"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Session-Token",
+								"value": "4c671fd40539b649cca02c3cdd379ba2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "old_password",
+									"value": "1234ABCD",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "1234567A",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/change_password",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"change_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rate_administration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Session-Token",
+								"value": "c675e4329db4da9d4e0dea94c004815f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vaccination_center_name",
+									"value": "0x02",
+									"type": "text"
+								},
+								{
+									"key": "score",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/rate_administration",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rate_administration"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

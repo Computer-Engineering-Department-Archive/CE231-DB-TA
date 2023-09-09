@@ -1,0 +1,27 @@
+.root_bar {
+    margin: 20px;
+    display: block;
+}
+
+.bar_buttons {
+    width: 220px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.receipt_div {
+    display: flex;
+}
+.receipt_button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    width: 220px;
+}
+.report_button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}

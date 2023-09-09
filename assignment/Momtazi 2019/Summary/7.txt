@@ -1,0 +1,163 @@
+>> Design & creating a database application involves:
+	database schema 
+	programs that access and update data 
+	security scheme to control access to data 
+	
+>> Design Phases:
+	Characterizing the data needs of the prospective database users 
+	Choosing a data model  
+	By applying the concepts of the chosen data model, translating requirements to a conceptual schema of the database 
+	Reviewing the schema to ensure it meets functional requirements 
+	
+>> moving from abstract data model to the implementation of database have these 2 final design phases:
+	Logical Design --> Deciding on the database schema 
+		Business decision – What attributes 
+		Computer Science decision –  What relation 
+	Physical Design --> Deciding on the physical layout of the database
+	
+>> Design Approaches
+	Entity Relationship Model: entities and relationships 
+		Entity: a “thing” or “object” distinguishable from other objects. Described by a set of attributes 
+		Relationship: an association among several entities 
+		# Represented diagrammatically by an entity-relationship diagram
+	Normalization Theory (Chapter 8): Formalize what designs are bad, and test for them
+	
+>> Major issues in designing a database schema:
+	Redundancy: A bad design may repeat information
+	Incompleteness: A bad design may make certain aspects of the enterprise difficult or impossible to model
+      
+>> ER Data Modeling  
+	>>
+		facilitate database design by allowing specification of enterprise schema 
+		mapping meanings and interactions of real-world enterprises onto a conceptual schema
+	
+	>> three basic concepts:  entity sets, relationship sets, attributes 
+	
+	>> Entity: object that exists and is distinguishable from other objects. Example: instructors, students
+	>> Entity set: set of entities of the same type that share the same properties. Example: set of all instructors
+	>> Attributes: entity is represented by a set of attributes. subset of attributes form primary key of entity set
+	>> Relationship: association among several entities 
+	>> Relationship set: mathematical relation among entities
+	
+	>> Descriptive Attributes: attribute can also be associated with a relationship set
+	
+	>> Degree of a Relationship Set
+		>> Binary relationship: involve two entity sets 
+		>> Relationships involving more than two entity sets 
+
+>> ER Constraints
+	>> Mapping Cardinality Constraints
+		Express the number of entities to which another entity can be associated via a relationship set
+		
+		>> useful in binary relationship sets & For binary relationship set the mapping cardinality must be one of these: 
+			One to one, One to many, Many to one, Many to many  
+	
+	>> Participation
+		>> Total participation: every entity in entity set participates in at least one relationship in the relationship set 
+		>> Partial participation: some entities may not participate in any relationship in relationship set 
+		
+	>> Complex Attributes
+		>> Attribute types
+			Simple and composite 
+			Single-valued and multivalued 
+			Derived: Can be computed from other attributes 
+		>> Domain: the set of permitted values for each attribute  
+	
+>> Removing Redundancy
+	>> Redundant Attributes 
+	>> Weak(!strong) Entity Sets: A weak entity set is one whose existence is dependent on another entity, called its identifying entity
+		we use identifying entity, with extra attributes called discriminator to uniquely identify a weak entity. 
+	
+	>> Every weak entity must be associated with an identifying entity 
+		weak entity set is said to be existence dependent on identifying entity set.  
+		identifying entity set is said to own weak entity set that it identifies.  
+		relationship associating weak entity set with identifying entity set is called identifying relationship. 
+
+>> ER Diagram 
+	>> Entity Sets 
+		Rectangles = entity sets. 
+		Attributes listed inside entity rectangle 
+		Underline = primary key attributes 
+		
+	>> Relationship  Sets
+		Diamonds = relationship sets
+		
+	>> Cardinality Constraints 
+		----> signifying “one” 
+		-----  signifying “many” 
+		
+	>> Participation 
+		===== Total 
+		
+	>> Complex Constraints 
+		line have an associated minimum and maximum cardinality, shown in the form l..h
+		
+		minimum value of 1 indicates total participation. 
+		maximum value of 1 indicates that the entity participates in at most one relationship 
+		maximum value of * indicates no limit. 
+	
+	>> Weak Entity Sets 
+		weak entity set is depicted via a double rectangle. 
+		discriminator of weak entity set is underlined with dashed line. 
+		relationship set connecting weak entity set to identifying strong entity set is depicted by a double diamond
+		
+	>> Roles: Entity sets of a relationship need not be distinct 
+	
+	>> Non-binary Relationship Sets 
+		
+complete:::	>> Cardinality Constraints on Ternary Relationship 
+
+>> Reduction to Relation Schemas 
+	Entity sets and relationship sets can be expressed uniformly as relation schemas
+
+	>> Representing Entity Sets 
+		>> strong entity set reduces to a relation schema with same attributes 
+		>> weak entity set becomes a table that includes a column for primary key of the identifying strong entity set  
+		>> Composite Attributes: Composite attributes are flattened out by creating a separate attribute for each component attribute 
+		>> Multivalued Attributes: A multivalued attribute M of an entity E is represented by a separate schema EM 
+	
+	>> Representing Relationship Sets
+		>> binary many-to-many relationship set is represented as schema with attributes for primary keys of two participating entity sets, 
+			and any descriptive attributes of relationship set
+		>> binary one-to-one relationship set, primary key of either entity set can be chosen as primary key. 
+			choice can be made arbitrarily. 
+		>> binary many-to-one or one-to-many relationship set, 
+			primary key of entity set on the “many” side of the relationship set serves as the primary key. 
+		>> n-ary relationship set without any arrows on its edges, 
+			union of primary key-attributes from participating entity sets becomes primary key. 
+		>> n-ary relationship set with an arrow on one of its edges, 
+			primary keys of entity sets not on “arrow” side of relationship set serve as primary key for schema. Recall that we allowed only one arrow out of a relationship set.
+
+>> Redundancy of Schemas
+	>> Many-to-one and one-to-many relationship sets that are total on the many-side 
+		can be represented by adding an extra attribute to “many” side, containing the primary key of “one” side 
+		>> For one-to-one relationship sets, either side can be chosen to act as “many” side 
+		# If participation is partial on “many” side, replacing schema by extra attribute in schema corresponding to “many” side could result null values 
+	# schema corresponding to relationship set linking weak entity set to its identifying strong entity set is redundant
+	
+>> Extended E-R Features
+	>>
+		>> Specialization 	
+		>> Generalization
+		# Specialization and generalization are simple inversions of each other
+		
+	>> Attribute inheritance: superclass and subclass --> triangle component labeled ISA (e.g., instructor “is a” person)
+		>> 
+			>> Overlapping
+				An entity may belong to multiple specialized entity sets 
+			>> Disjoint  
+				Entities must belong to at most one specialized entity set 
+		>> Representing Specialization via Schemas
+			>> 
+				Form schema for higher-level entity and a schema for each lower-level entity set, 
+				include primary key of higher-level entity set and local attributes 
+			>>
+				Form a schema for each entity set with all local and inherited attributes 
+	>> Relationship Inheritance: lower-level entity set also inherits participation in the relationship sets in which its higher-level entity participates
+	>> Design Constraints on a Specialization/Generalization
+		>> Completeness constraint -- specifies whether or not an entity in higher-level entity set must belong to at least one of lower-level entity sets within a generalization
+			>> total: an entity must belong to one of lower-level entity sets 
+			>> partial: an entity need not belong to one of lower-level entity sets 
+			# Partial generalization is default
+complete:::		>>
+ 
